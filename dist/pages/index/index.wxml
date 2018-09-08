@@ -1,0 +1,12 @@
+<view class="page" bindtap="hideKeyboard">
+
+
+  <view class="text text_con_focus" catchtap="showKeyboard">
+    {{textValue}}
+    <view class="keyboard-cursor"></view>
+  </view>
+
+  <view class='bottom-container'>
+    <usKeyboard bindinput="inputChange" binddone="inputDone" id="keyboard"></usKeyboard>
+  </view>
+</view>

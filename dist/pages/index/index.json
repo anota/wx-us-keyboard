@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "usKeyboard": "/components/wx-us-keyboard/index"
+  }
+}

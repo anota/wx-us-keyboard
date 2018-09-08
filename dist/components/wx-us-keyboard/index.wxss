@@ -1,0 +1,139 @@
+/* pages/vehicleKeyboard/vehicleKeyboard.wxss */
+
+.keyboard {
+  z-index: 9;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgb(210, 213, 219);
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.td {
+  font-family: HelveticaNeue,HelveticaNeue-Regular,HelveticaNeue-Light;
+  text-align: center;
+  font-size: 40rpx;
+  width: 74rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  background: #fff;
+  margin: 10rpx 5rpx;
+  color: #1e1e1e;
+  border-radius: 10rpx;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+.td_num {
+  width: 66rpx;
+}
+.td_mid{
+  width: 96rpx;
+}
+
+.td_nor {
+  width: 84rpx;
+  margin: 10rpx 4rpx;
+}
+
+.td_big_right {
+  margin-right: 44rpx;
+}
+
+.td_big_left {
+  margin-left: 44rpx;
+}
+
+.td_spec_fin {
+  width: 23%;
+  justify-self: flex-end;
+  background-color: #09f;
+  color: #fff;
+}
+.icon-shift,.icon-shift-on{
+  width: 28px;
+  height: 15px;
+  position: relative;
+  top: 2rpx;
+}
+
+.icon-del,.icon-del-hover{
+  width: 20px;
+  height: 15px;
+  position: relative;
+  top: 2rpx;
+}
+.td_spec_shift,
+.td_spec_del{
+  position: absolute;
+  width: 84rpx;
+  bottom: 104rpx;
+  background-color: rgba(119, 136, 153, 0.5);
+}
+.td_spec_shift{
+  left: 5rpx;
+}
+.td_spec_del {
+  right: 5rpx;
+}
+/* 删除hover */
+.icon-del-hover{
+  display: none;
+}
+.td_spec_del.board_bg_spec .icon-del{
+  display: none;
+}
+.td_spec_del.board_bg_spec .icon-del-hover{
+  display: inline-block;
+}
+
+.icon-shift-on{
+  display: none;
+}
+.td_spec_shift.on .icon-shift{
+  display: none;
+}
+.td_spec_shift.on .icon-shift-on{
+  display: inline-block;
+}
+
+.board_bg {
+  box-shadow: 0 0 0 #e5e5e5;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.fnkey-wrap {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0 5rpx;
+}
+.fnkey-wrap .td{
+  font-size: 28rpx;
+}
+
+.space {
+  flex: 1;
+  width: auto;
+}
+
+.trans, .done,.space {
+  width: 150rpx;
+  
+}
+
+.trans {
+  background: rgba(119, 136, 153, 0.5);
+}
+
+.done {
+  background: #007aff;
+  color: #fff;
+  font-family: HelveticaNeue-Light;
+}

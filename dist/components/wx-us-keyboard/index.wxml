@@ -1,0 +1,56 @@
+<!--pages/vehicleKeyboard/vehicleKeyboard.wxml-->
+<!--键盘-->
+<view class="keyboard" catchtap="stopProp">
+  <!--数字键盘 start-->
+  <block wx:if='{{isNum}}' wx:for="{{keyboardNumber}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">
+    <view wx:if="{{idx < 20}}" class="td td_num" bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">{{itemName}}</view>
+    <view wx:else class="td td_mid" bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">{{itemName}}</view>
+  </block>
+  <!-- 数字键盘 end -->
+
+
+  <!--字母键盘-->
+  <block wx:if="{{!isNum}}" wx:for="{{keyboardAlph}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">
+
+    <view wx:if="{{idx == 10}}" class="td td_num td_big_left" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+      <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
+        {{itemName}}
+      </view>
+    </view>
+    <view wx:elif="{{idx == 18}}" class="td td_num td_big_right" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+      <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
+        {{itemName}}
+      </view>
+    </view>
+    <view wx:else class="td td_num" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+      <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
+        {{itemName}}
+      </view>
+    </view>
+  </block>
+  <!-- 字母键盘 end -->
+
+  <!--删除 start-->
+  <view class="td td_spec_del iconfont icon-deleteicon" bindtap="tapKeyboard" data-val="del" hover-class="board_bg_spec" hover-start-time="0" hover-stay-time="80">
+    <image data-val="del" class='icon-del' src='./images/icon_del.svg'></image>
+    <image data-val="del" class='icon-del-hover' src='./images/icon_del_press.svg'></image>
+  </view>
+  <!--删除按钮 end-->
+
+  <!--shift start-->
+  <view class="td td_spec_shift iconfont icon-deleteicon {{isUpperCase ?'on' : ''}}" bindtap="onShift" hover-class="board_bg_spec" hover-start-time="0" hover-stay-time="80">
+    <image class='icon-shift' src='./images/icon_shift.svg'></image>
+    <image class='icon-shift-on' src='./images/icon_shift_on.svg'></image>
+  </view>
+  <!--shift end-->
+
+  <!-- 功能键盘 start -->
+  <view class='fnkey-wrap'>
+    <view class="td trans" hidden='{{isNum}}' bindtap='onTrans' hover-start-time="0" hover-stay-time="80">123</view>
+    <view class="td trans" hidden='{{!isNum}}' bindtap='onTrans' hover-start-time="0" hover-stay-time="80">ABC</view>
+    <view class="td space" data-val=" " hover-class="board_bg" hover-start-time="0" hover-stay-time="80" bindtap="tapKeyboard">space</view>
+    <view class="td done" hover-class="board_bg" hover-start-time="0" hover-stay-time="80" bindtap='onDone'>Done</view>
+  </view>
+  <!-- 功能键盘 end -->
+
+</view>
